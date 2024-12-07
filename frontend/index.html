@@ -3,16 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hacking tools OS kit</title>
-    <link rel="stylesheet" href="style.css">
+    <title>統合セキュリティ＆ハッキングツール</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>情報収集ツール</h1>
-        <button id="fetch-data">データ収集を開始</button>
-        <h2>収集データ</h2>
-        <div id="data-display"></div>
-    </div>
-    <script src="script.js"></script>
+    <header>
+        <h1>統合セキュリティ＆ハッキングツール</h1>
+        <p>以下の機能を使用して情報を収集し、セキュリティツールを活用してください。</p>
+    </header>
+    
+    <main>
+        <section id="data-collection">
+            <h2>情報収集ツール</h2>
+            <button onclick="runTool('collect_data')">データを収集</button>
+            <div id="collect_data_result" class="result"></div>
+        </section>
+
+        <section id="security-tools">
+            <h2>セキュリティツール</h2>
+
+            <!-- ポートスキャナー -->
+            <button onclick="runTool('port_scan')">ポートスキャン</button>
+            <div id="port_scan_result" class="result"></div>
+
+            <!-- パケットスニファ -->
+            <button onclick="runTool('packet_sniff')">パケットキャプチャ</button>
+            <div id="packet_sniff_result" class="result"></div>
+
+            <!-- DNSルックアップ -->
+            <button onclick="runTool('dns_lookup')">DNSルックアップ</button>
+            <div id="dns_lookup_result" class="result"></div>
+
+            <!-- WHOIS -->
+            <button onclick="runTool('whois_lookup')">WHOIS情報取得</button>
+            <div id="whois_lookup_result" class="result"></div>
+
+            <!-- サーバーステータスチェック -->
+            <button onclick="runTool('server_status')">サーバーステータスチェック</button>
+            <div id="server_status_result" class="result"></div>
+
+            <!-- パスワード生成 -->
+            <button onclick="runTool('password_generator')">パスワード生成</button>
+            <div id="password_generator_result" class="result"></div>
+
+            <!-- ディレクトリブルートフォース -->
+            <button onclick="runTool('directory_bruteforce')">ディレクトリブルートフォース</button>
+            <div id="directory_bruteforce_result" class="result"></div>
+
+            <!-- IPジオロケーション -->
+            <button onclick="runTool('ip_geolocation')">IPジオロケーション</button>
+            <div id="ip_geolocation_result" class="result"></div>
+
+            <!-- SHA-256暗号化 -->
+            <button onclick="runTool('sha256_encrypt')">SHA-256暗号化</button>
+            <div id="sha256_encrypt_result" class="result"></div>
+
+            <!-- ARPスプーフィングチェッカー -->
+            <button onclick="runTool('arp_spoof_checker')">ARPスプーフィング検出</button>
+            <div id="arp_spoof_checker_result" class="result"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 統合ツールシステム</p>
+    </footer>
+
+    <script src="/static/script.js"></script>
 </body>
 </html>
