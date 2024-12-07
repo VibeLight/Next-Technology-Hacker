@@ -1,10 +1,10 @@
-from flask import Flask, jsonify
+from flask import Flask, render_template, jsonify
 import json
 from modules.api_fetcher import fetch_api
 from modules.rss_fetcher import fetch_rss
 from modules.web_scraper import scrape_web
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="templates", static_folder="static")
 
 def load_settings():
     with open("settings.json", "r") as file:
@@ -33,6 +33,10 @@ def collect_data():
         json.dump(collected_data, file, ensure_ascii=False, indent=4)
 
     return collected_data
+
+@app.route("/")
+def index():
+    return render_template("index.html")
 
 @app.route("/collect", methods=["GET"])
 def collect():
